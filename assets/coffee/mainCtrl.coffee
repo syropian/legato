@@ -27,8 +27,7 @@ angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope,
     
   $scope.updateUser = ->
     $rootScope.user = $scope.user
-    #$location.path("#{$scope.user}")
-    window.history.replaceState(null, null, "#{$scope.user}");
+    $location.path("#{$scope.user}")
     $scope.getData()
   
   $scope.getData()  

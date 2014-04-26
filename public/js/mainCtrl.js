@@ -22,7 +22,7 @@
     };
     $scope.updateUser = function() {
       $rootScope.user = $scope.user;
-      window.history.replaceState(null, null, "" + $scope.user);
+      $location.path("" + $scope.user);
       return $scope.getData();
     };
     return $scope.getData();
