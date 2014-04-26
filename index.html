@@ -3,37 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Legato</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="public/css/app.css">
 </head>
 <body>
-<div class="container" ng-controller="MainController">
-  <h3>Recent Tracks</h3>
-  <ul>
-    <li ng-repeat="track in recentTracks">
-      {{ track.name }}
-    </li>
-  </ul>
-  <h3>Top Artists</h3>
-  <ul>
-    <li ng-repeat="artist in topArtists">
-      {{ artist.name }} - <em>{{ artist.playcount }} plays</em>
-    </li>
-  </ul>
-  <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
+  <div class="header">
+    <div class="logo">Legato</div>
+  </div>
+  <div class="container" ng-controller="MainController">
+    <div class="statbox recent-tracks">
+      <h3>Recent Tracks</h3>
+      <ul>
+        <li ng-repeat="track in recentTracks">
+          <img ng-src='{{ track.image[1]["#text"] }}' alt="" class="albumcover-small">
+          <div class="track-meta">
+            <strong>{{ track.name }}</strong>
+            <br />
+            {{ track.artist["#text"] }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="statbox top-artists">
+      <h3>Top Artists</h3>
+      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
+    </div>
 
-</div>  
-<!-- JS -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<!-- <script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script> -->
-<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
-<script src="public/js/mainCtrl.js"></script>
-<script src="public/js/lastfmService.js"></script>
-<script src="public/js/app.js"></script>
-<script>
-  angular.module('app').constant('LASTFM_API_KEY', '2626c3cc4b7511f0b0c0f63f4ce9b9fc');
-</script>
+  </div>  
+  <!-- JS -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script>
+  <!-- <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
+  <script src="public/js/mainCtrl.js"></script>
+  <script src="public/js/lastfmService.js"></script>
+  <script src="public/js/app.js"></script>
+  <script>
+    angular.module('app').constant('LASTFM_API_KEY', '2626c3cc4b7511f0b0c0f63f4ce9b9fc');
+  </script>
+  <!-- End JS -->
 </body>
 </html>

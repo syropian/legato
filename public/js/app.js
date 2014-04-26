@@ -10,7 +10,7 @@
       replace: true,
       link: function($scope, element, attrs) {
         var createGraph;
-        $scope.$watch('topArtists', function(newVal) {
+        $scope.$watch(attrs.data, function(newVal) {
           if (newVal.length) {
             return createGraph();
           }
@@ -26,7 +26,8 @@
             data: data,
             xkey: xkey,
             ykeys: ykeys,
-            labels: labels
+            labels: labels,
+            gridTextSize: 11
           });
         };
       }

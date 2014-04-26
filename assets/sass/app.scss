@@ -1,1 +1,64 @@
 @import 'bourbon';
+$dark-blue: #2b303b;
+*, *::before, *::after {
+  @include box-sizing( border-box );
+}
+html, body {
+  margin: 0; padding: 0;
+}
+body {
+  background: #fff;
+  color: #666;
+  font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+}
+.header {
+  @include size( 100% 60px );
+  background: $dark-blue;
+  color: #fafafa;
+  line-height: 60px;
+  padding: 0 20px;
+  position: fixed; top: 0; left: 0;
+  z-index: 99999;
+
+}
+.container {
+  margin: 0 auto;
+  position: relative; top: 60px;
+  width: 90%;
+}
+.statbox {
+  @include inline-block;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  vertical-align: top;
+}
+.recent-tracks {
+  width: 300px;
+  ul {
+    list-style-type: none;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    li {
+      display: block;
+      font-size: 14px;
+      margin: 15px 0;
+      padding: 20px 0;
+      position: relative;
+      img.albumcover-small {
+        position: absolute; top: 20px; left: 0;
+        @include size( 32px );
+      }
+      .track-meta {
+        position: relative; top: -2px; left: 47px;
+      }
+    }
+  }
+}
+.top-artists {
+  width: 800px;
+}

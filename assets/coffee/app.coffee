@@ -12,7 +12,7 @@ app.directive('barchart', ->
   template: '<div class="barchart"></div>'
   replace: true
   link: ($scope, element, attrs) ->
-    $scope.$watch('topArtists', (newVal) ->
+    $scope.$watch(attrs.data, (newVal) ->
       if newVal.length
         createGraph()
     )
@@ -28,6 +28,7 @@ app.directive('barchart', ->
         xkey: xkey
         ykeys: ykeys
         labels: labels
+        gridTextSize: 11
       )
     
 )
