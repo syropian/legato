@@ -1,5 +1,5 @@
 (function() {
-  angular.module('mainCtrl', []).controller('MainController', function($scope, $rootScope, $http, Lastfm) {
+  angular.module('mainCtrl', []).controller('MainController', function($scope, $rootScope, $http, $location, Lastfm) {
     $scope.recentTracks = {};
     $scope.topArtists = [];
     $scope.topTracks = [];
@@ -22,6 +22,7 @@
     };
     $scope.updateUser = function() {
       $rootScope.user = $scope.user;
+      window.history.replaceState(null, null, "" + $scope.user);
       return $scope.getData();
     };
     return $scope.getData();

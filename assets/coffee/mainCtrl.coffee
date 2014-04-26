@@ -1,4 +1,4 @@
-angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope, $http, Lastfm) ->
+angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope, $http, $location, Lastfm) ->
   $scope.recentTracks = {}
   $scope.topArtists = []
   $scope.topTracks = []
@@ -27,6 +27,8 @@ angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope,
     
   $scope.updateUser = ->
     $rootScope.user = $scope.user
+    #$location.path("#{$scope.user}")
+    window.history.replaceState(null, null, "#{$scope.user}");
     $scope.getData()
   
   $scope.getData()  
