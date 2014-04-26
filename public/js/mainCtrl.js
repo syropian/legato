@@ -6,14 +6,7 @@
       return $scope.recentTracks = res.recenttracks.track;
     });
     return Lastfm.getTopArtists().success(function(res) {
-      var artists;
-      artists = res.topartists.artist.slice(0, 10);
-      return artists.forEach(function(artist) {
-        return $scope.topArtists.push({
-          "name": artist.name,
-          "playcount": artist.playcount
-        });
-      });
+      return $scope.topArtists = res.topartists.artist.slice(0, 10);
     });
   });
 

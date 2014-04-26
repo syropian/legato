@@ -19,13 +19,14 @@
       {{ artist.name }} - <em>{{ artist.playcount }} plays</em>
     </li>
   </ul>
-  <!-- <barchart xkey="xkey" ykeys="ykeys" labels="Play Count" data="topArtists"></barchart> -->
+  <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
 
 </div>  
 <!-- JS -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script>
+<!-- <script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script> -->
+<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
 <script src="public/js/mainCtrl.js"></script>
