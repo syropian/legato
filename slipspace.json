@@ -5,7 +5,7 @@
       "user": "root",
       "path": "/home/root/legato",
       "after": [
-        "chmod -R og-rx .git",
+        "chmod -R og-rx .git"
       ],
       "migrate": ""
     }

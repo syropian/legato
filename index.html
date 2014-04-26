@@ -11,13 +11,13 @@
     <div class="logo">Legato</div>
   </div>
   <div class="container" ng-controller="MainController" masonry item-selector=".statbox" column-width="380" masonry-options="{ gutter: 15, isFitWidth: true }">
-    <div class="masonry-brick statbox top-artists">
-      <h3>Top 10 Artists</h3>
-      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
-    </div>
     <div class="masonry-brick statbox top-tracks">
       <h3>Top 10 Tracks</h3>
       <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topTracks"></barchart>
+    </div>
+    <div class="masonry-brick statbox top-artists">
+      <h3>Top 10 Artists</h3>
+      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
     </div>
     <div class="masonry-brick statbox top-albums">
       <h3>Top 10 Albums</h3>
