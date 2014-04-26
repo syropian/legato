@@ -12,17 +12,21 @@
         var createGraph;
         $scope.$watch(attrs.data, function(newVal) {
           if (newVal.length) {
-            createGraph();
+            if (!element.children('svg').length) {
+              createGraph();
+            } else {
+              element.data('morris').setData(newVal);
+            }
             return $('.container').masonry();
           }
         });
         return createGraph = function() {
-          var data, labels, xkey, ykeys;
+          var chart, data, labels, xkey, ykeys;
           data = $scope[attrs.data];
           xkey = attrs.xkey;
           ykeys = [attrs.ykeys];
           labels = [attrs.labels];
-          return Morris.Bar({
+          chart = Morris.Bar({
             element: element,
             data: data,
             xkey: xkey,
@@ -38,14 +42,14 @@
               }
             }
           });
+          return $(element).data('morris', chart);
         };
       }
     };
   });
 
-  app.run(function($rootScope) {
-    $rootScope.user = "hendo13";
-    return $rootScope.loading = false;
+  app.run(function($rootScope, $location) {
+    return $rootScope.user = window.location.pathname.replace('/', '') || "rj";
   });
 
 }).call(this);

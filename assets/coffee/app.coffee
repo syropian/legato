@@ -21,7 +21,10 @@ app.directive('barchart', ->
   link: ($scope, element, attrs) ->
     $scope.$watch(attrs.data, (newVal) ->
       if newVal.length
-        createGraph()
+        unless element.children('svg').length
+          createGraph()
+        else
+          element.data('morris').setData(newVal)
         $('.container').masonry()
     )
     createGraph = ->
@@ -30,7 +33,7 @@ app.directive('barchart', ->
       ykeys = [ attrs.ykeys ]
       labels = [ attrs.labels ]
       
-      Morris.Bar(
+      chart = Morris.Bar(
         element: element
         data: data
         xkey: xkey
@@ -43,11 +46,10 @@ app.directive('barchart', ->
             return content.replace(row.name, "<strong>#{row.name}</strong> <em>by</em> #{row.artist.name}")
           else
             return content
-          
       )
+      $(element).data('morris', chart)
     
 )
 
-app.run ($rootScope) ->
-  $rootScope.user = "hendo13"
-  $rootScope.loading = false
+app.run ($rootScope, $location) ->
+  $rootScope.user = window.location.pathname.replace('/', '') || "rj"  
