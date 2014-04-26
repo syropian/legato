@@ -62,8 +62,4 @@
     };
   });
 
-  app.run(function($rootScope, $location) {
-    return $rootScope.user = window.location.pathname.replace('/', '') || "rj";
-  });
-
 }).call(this);

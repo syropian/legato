@@ -62,5 +62,5 @@ app.directive('barchart', ->
     
 )
 
-app.run ($rootScope, $location) ->
-  $rootScope.user = window.location.pathname.replace('/', '') || "rj"  
+# app.run ($rootScope, $location) ->
+#   $rootScope.user = window.location.pathname.replace('/', '') || "rj"

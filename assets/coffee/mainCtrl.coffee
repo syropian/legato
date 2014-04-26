@@ -3,8 +3,13 @@ angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope,
   $scope.topArtists = []
   $scope.topTracks = []
   $scope.topAlbums = []
+  if $routeParams.user
+    $rootScope.user = $routeParams.user
+  else
+    $rootScope.user = "rj"  
   $scope.user = $rootScope.user
   $scope.loading = true
+  
   $scope.getData = ->
     $.when(
       Lastfm.getRecentTracks().success((res) ->
