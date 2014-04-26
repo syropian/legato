@@ -1,7 +1,7 @@
 (function() {
   var app;
 
-  app = angular.module('app', ['ngRoute', 'mainCtrl', 'lastfmService']);
+  app = angular.module('app', ['ngRoute', 'wu.masonry', 'mainCtrl', 'lastfmService']);
 
   app.directive('barchart', function() {
     return {
@@ -12,7 +12,8 @@
         var createGraph;
         $scope.$watch(attrs.data, function(newVal) {
           if (newVal.length) {
-            return createGraph();
+            createGraph();
+            return $('.container').masonry();
           }
         });
         return createGraph = function() {
@@ -28,7 +29,14 @@
             ykeys: ykeys,
             labels: labels,
             gridTextSize: 11,
-            barColors: ["#2dbba6"]
+            barColors: ["#2dbba6"],
+            hoverCallback: function(index, options, content, row) {
+              if (row.artist) {
+                return content.replace(row.name, "<strong>" + row.name + "</strong> <em>by</em> " + row.artist.name);
+              } else {
+                return content;
+              }
+            }
           });
         };
       }

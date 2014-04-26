@@ -10,8 +10,20 @@
   <div class="header">
     <div class="logo">Legato</div>
   </div>
-  <div class="container" ng-controller="MainController">
-    <div class="statbox recent-tracks">
+  <div class="container" ng-controller="MainController" masonry item-selector=".statbox" column-width="380" masonry-options="{ gutter: 15, isFitWidth: true }">
+    <div class="masonry-brick statbox top-artists">
+      <h3>Top 10 Artists</h3>
+      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
+    </div>
+    <div class="masonry-brick statbox top-tracks">
+      <h3>Top 10 Tracks</h3>
+      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topTracks"></barchart>
+    </div>
+    <div class="masonry-brick statbox top-albums">
+      <h3>Top 10 Albums</h3>
+      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topAlbums"></barchart>
+    </div>
+    <div class="masonry-brick statbox recent-tracks">
       <h3>Recent Tracks</h3>
       <ul>
         <li ng-repeat="track in recentTracks">
@@ -24,19 +36,16 @@
         </li>
       </ul>
     </div>
-    <div class="statbox top-artists">
-      <h3>Top Artists</h3>
-      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
-    </div>
-
   </div>  
   <!-- JS -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- <script src="public/js/imagesloaded.pkgd.min.js"></script> -->
+  <script src="public/js/masonry.pkgd.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script>
-  <!-- <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script> -->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
+  <script src="public/js/angular-masonry.min.js"></script>
   <script src="public/js/mainCtrl.js"></script>
   <script src="public/js/lastfmService.js"></script>
   <script src="public/js/app.js"></script>

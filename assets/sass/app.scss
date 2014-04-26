@@ -7,6 +7,9 @@ $green: #2dbba6;
 }
 html, body {
   margin: 0; padding: 0;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 body {
   background: #fff;
@@ -21,28 +24,32 @@ body {
   padding: 0 20px;
   position: fixed; top: 0; left: 0;
   z-index: 99999;
+  .logo {
+    font-weight: bold;
+  }
 
 }
 .container {
   margin: 0 auto;
-  position: relative; top: 60px;
-  width: 90%;
+  padding-bottom: 20px;
+  position: relative; top: 80px;
+  width: 1140px;
 }
 .statbox {
-  @include inline-block;
-  margin-right: 20px;
-  margin-top: 20px;
+  //@include inline-block;
+  // margin-right: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   background: #fafafa;
   border: 1px solid #eee;
   border-radius: 6px;
-  vertical-align: top;
+  //vertical-align: top;
   h3 {
     margin-top: 0;
   }
 }
 .recent-tracks {
-  width: 300px;
+  width: 380px;
   ul {
     list-style-type: none;
     width: 300px;
@@ -51,7 +58,7 @@ body {
     li {
       display: block;
       font-size: 14px;
-      margin: 15px 0;
+      margin: 0;
       padding: 20px 0;
       position: relative;
       img.albumcover-small {
@@ -70,6 +77,6 @@ body {
     }
   }
 }
-.top-artists {
-  width: 800px;
+.top-artists, .top-tracks, .top-albums {
+  width: 760px;
 }

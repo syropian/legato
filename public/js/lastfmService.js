@@ -21,6 +21,22 @@
         }
         endpoint = this.constructEndpoint("user.gettopartists", "" + period);
         return $http.get(endpoint);
+      },
+      getTopTracks: function(period) {
+        var endpoint;
+        if (period == null) {
+          period = "overall";
+        }
+        endpoint = this.constructEndpoint("user.gettoptracks", "" + period);
+        return $http.get(endpoint);
+      },
+      getTopAlbums: function(period) {
+        var endpoint;
+        if (period == null) {
+          period = "overall";
+        }
+        endpoint = this.constructEndpoint("user.gettopalbums", "" + period);
+        return $http.get(endpoint);
       }
     };
   });
