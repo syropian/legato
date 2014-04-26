@@ -7,14 +7,25 @@
 </head>
 <body>
 <div class="container" ng-controller="MainController">
+  <h3>Recent Tracks</h3>
   <ul>
     <li ng-repeat="track in recentTracks">
       {{ track.name }}
     </li>
   </ul>
+  <h3>Top Artists</h3>
+  <ul>
+    <li ng-repeat="artist in topArtists">
+      {{ artist.name }} - <em>{{ artist.playcount }} plays</em>
+    </li>
+  </ul>
+  <!-- <barchart xkey="xkey" ykeys="ykeys" labels="Play Count" data="topArtists"></barchart> -->
+
 </div>  
 <!-- JS -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://cdn.oesmith.co.uk/morris-0.5.0.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
 <script src="public/js/mainCtrl.js"></script>

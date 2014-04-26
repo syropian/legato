@@ -1,8 +1,14 @@
 angular.module('lastfmService', []).factory('Lastfm', ($http, $rootScope, LASTFM_API_KEY) ->
-  constructEndpoint: (method) ->
-    return "http://ws.audioscrobbler.com/2.0/?method=#{method}&user=#{$rootScope.user}&api_key=#{LASTFM_API_KEY}&format=json"
+  constructEndpoint: (method, opts) ->
+    endpoint = "http://ws.audioscrobbler.com/2.0/?method=#{method}&user=#{$rootScope.user}&api_key=#{LASTFM_API_KEY}&format=json"
+    if opts 
+      endpoint += "&#{opts}"
+    return endpoint
 
   getRecentTracks: ->
     endpoint = @constructEndpoint("user.getrecenttracks")
+    $http.get(endpoint)
+  getTopArtists: (period = "overall") ->
+    endpoint = @constructEndpoint("user.gettopartists", "#{period}")
     $http.get(endpoint)
 )    
