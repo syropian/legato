@@ -27,7 +27,8 @@
             xkey: xkey,
             ykeys: ykeys,
             labels: labels,
-            gridTextSize: 11
+            gridTextSize: 11,
+            barColors: ["#2dbba6"]
           });
         };
       }

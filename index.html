@@ -17,9 +17,9 @@
         <li ng-repeat="track in recentTracks">
           <img ng-src='{{ track.image[1]["#text"] }}' alt="" class="albumcover-small">
           <div class="track-meta">
-            <strong>{{ track.name }}</strong>
+            <span class="track-name">{{ track.name }}</span>
             <br />
-            {{ track.artist["#text"] }}
+            <span class="track-artist">{{ track.artist["#text"] }}</span>
           </div>
         </li>
       </ul>

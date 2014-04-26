@@ -1,5 +1,7 @@
 @import 'bourbon';
+@import 'normalize';
 $dark-blue: #2b303b;
+$green: #2dbba6;
 *, *::before, *::after {
   @include box-sizing( border-box );
 }
@@ -35,6 +37,9 @@ body {
   border: 1px solid #eee;
   border-radius: 6px;
   vertical-align: top;
+  h3 {
+    margin-top: 0;
+  }
 }
 .recent-tracks {
   width: 300px;
@@ -55,6 +60,12 @@ body {
       }
       .track-meta {
         position: relative; top: -2px; left: 47px;
+        .track-name {
+          font-weight: bold;
+        }
+        .track-artist {
+          color: #999;
+        }
       }
     }
   }

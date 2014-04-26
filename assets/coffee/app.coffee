@@ -29,6 +29,7 @@ app.directive('barchart', ->
         ykeys: ykeys
         labels: labels
         gridTextSize: 11
+        barColors: ["#2dbba6"]
       )
     
 )
