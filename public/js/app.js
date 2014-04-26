@@ -3,6 +3,20 @@
 
   app = angular.module('app', ['ngRoute', 'wu.masonry', 'mainCtrl', 'lastfmService']);
 
+  app.config(function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $routeProvider.when('/', {
+      templateUrl: 'public/templates/index.html',
+      controller: 'MainController'
+    }).when('/:user', {
+      templateUrl: 'public/templates/index.html',
+      controller: 'MainController'
+    });
+    return $routeProvider.otherwise({
+      redirectTo: '/'
+    });
+  });
+
   app.directive('barchart', function() {
     return {
       restrict: 'E',

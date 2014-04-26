@@ -14,6 +14,17 @@ app = angular.module('app',
     ]
 )
 
+app.config ($routeProvider, $locationProvider) ->
+  $locationProvider.html5Mode(true)
+  $routeProvider.when('/', {
+    templateUrl: 'public/templates/index.html'
+    controller: 'MainController'
+  }).when('/:user', {
+    templateUrl: 'public/templates/index.html'
+    controller: 'MainController'
+  })  
+  $routeProvider.otherwise({ redirectTo: '/' })
+
 app.directive('barchart', ->
   restrict: 'E'
   template: '<div class="barchart"></div>'

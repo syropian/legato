@@ -6,42 +6,8 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="public/css/app.css">
 </head>
-<body ng-controller="MainController">
-  <div class="header" >
-    <div class="logo">Legato</div>
-    <form class="change-user" ng-submit="updateUser()">
-      <label for="txtUser">Change User</label>
-      <input type="text" ng-model="user" id="txtUser" placeholder="LastFM Username">
-      <button type="submit" ng-disabled="loading">Update</button>
-    </form>
-  </div>
-  <div class="container" masonry item-selector=".statbox" column-width="380" masonry-options="{ gutter: 15, isFitWidth: true }">
-    <div class="masonry-brick statbox top-tracks">
-      <h3>Top 10 Tracks</h3>
-      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topTracks"></barchart>
-    </div>
-    <div class="masonry-brick statbox top-artists">
-      <h3>Top 10 Artists</h3>
-      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
-    </div>
-    <div class="masonry-brick statbox top-albums">
-      <h3>Top 10 Albums</h3>
-      <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topAlbums"></barchart>
-    </div>
-    <div class="masonry-brick statbox recent-tracks">
-      <h3>Recent Tracks</h3>
-      <ul>
-        <li ng-repeat="track in recentTracks">
-          <img ng-src='{{ track.image[1]["#text"] }}' alt="" class="albumcover-small">
-          <div class="track-meta">
-            <span class="track-name">{{ track.name }}</span>
-            <br />
-            <span class="track-artist">{{ track.artist["#text"] }}</span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>  
+<body>
+  <div ng-view></div>
   <!-- JS -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <!-- <script src="public/js/imagesloaded.pkgd.min.js"></script> -->

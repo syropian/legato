@@ -1,10 +1,11 @@
-angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope, $http, $location, Lastfm) ->
+angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope, $http, $location, $routeParams, Lastfm) ->
   $scope.recentTracks = {}
   $scope.topArtists = []
   $scope.topTracks = []
   $scope.topAlbums = []
   $scope.user = $rootScope.user
   $scope.loading = true
+  console.log $routeParams
   $scope.getData = ->
     $.when(
       Lastfm.getRecentTracks().success((res) ->

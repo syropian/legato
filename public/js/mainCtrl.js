@@ -1,11 +1,12 @@
 (function() {
-  angular.module('mainCtrl', []).controller('MainController', function($scope, $rootScope, $http, $location, Lastfm) {
+  angular.module('mainCtrl', []).controller('MainController', function($scope, $rootScope, $http, $location, $routeParams, Lastfm) {
     $scope.recentTracks = {};
     $scope.topArtists = [];
     $scope.topTracks = [];
     $scope.topAlbums = [];
     $scope.user = $rootScope.user;
     $scope.loading = true;
+    console.log($routeParams);
     $scope.getData = function() {
       return $.when(Lastfm.getRecentTracks().success(function(res) {
         return $scope.recentTracks = res.recenttracks.track;
