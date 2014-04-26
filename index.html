@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Legato</title>
+  <link rel="stylesheet" href="public/css/app.css">
+</head>
+<body>
+<div class="container" ng-controller="MainController">
+  <ul>
+    <li ng-repeat="track in recentTracks">
+      {{ track.name }}
+    </li>
+  </ul>
+</div>  
+<!-- JS -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
+<script src="public/js/mainCtrl.js"></script>
+<script src="public/js/lastfmService.js"></script>
+<script src="public/js/app.js"></script>
+<script>
+  angular.module('app').constant('LASTFM_API_KEY', '2626c3cc4b7511f0b0c0f63f4ce9b9fc');
+</script>
+</body>
+</html>
