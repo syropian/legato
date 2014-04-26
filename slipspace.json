@@ -1,0 +1,13 @@
+{
+  "environments": {
+    "master": {
+      "host": "192.81.212.141",
+      "user": "root",
+      "path": "/home/root/legato",
+      "after": [
+        "chmod -R og-rx .git",
+      ],
+      "migrate": ""
+    }
+  }  
+}
