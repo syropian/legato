@@ -6,7 +6,6 @@
     $scope.topAlbums = [];
     $scope.user = $rootScope.user;
     $scope.loading = true;
-    console.log($routeParams);
     $scope.getData = function() {
       return $.when(Lastfm.getRecentTracks().success(function(res) {
         return $scope.recentTracks = res.recenttracks.track;

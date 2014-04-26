@@ -5,7 +5,6 @@ angular.module('mainCtrl', []).controller('MainController', ($scope, $rootScope,
   $scope.topAlbums = []
   $scope.user = $rootScope.user
   $scope.loading = true
-  console.log $routeParams
   $scope.getData = ->
     $.when(
       Lastfm.getRecentTracks().success((res) ->
