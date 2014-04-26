@@ -27,6 +27,8 @@ body {
   .logo {
     @include inline-block;
     font-weight: bold;
+    font-size: 32px;
+    text-shadow: 0 -1px 0 #000;
   }
   form.change-user {
     @include inline-block;
@@ -36,6 +38,7 @@ body {
       font-weight: bold;
       font-size: 12px;
       margin-right: 8px;
+      text-shadow: 0 -1px 0 #000;
     }
     input[type=text] {
       @include appearance( none );
