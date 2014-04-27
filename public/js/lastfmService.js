@@ -22,7 +22,6 @@
       getTopTracks: function(filter) {
         var endpoint;
         endpoint = this.constructEndpoint("user.gettoptracks", "period=" + filter);
-        console.log(endpoint);
         return $http.get(endpoint);
       },
       getTopAlbums: function(filter) {
