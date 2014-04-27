@@ -3,37 +3,48 @@
 $dark-blue: #2b303b;
 $green: #2dbba6;
 $light-grey: #a7acb1;
+$header-height: 60px;
 *, *::before, *::after {
   @include box-sizing( border-box );
 }
 html, body {
   margin: 0; padding: 0;
   height: 100%;
-  min-height: 100%;
   overflow-x: hidden;
 }
 body {
   background: #fff;
   color: #666;
   font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; 
+  line-height: 1.63;
+  h1,h2,h3,h4,h5,h6 { margin-top: 0; }
+}
+.wrapper {
+  min-height: 100%;
+  position: relative; top: 0;
 }
 .header {
-  @include size( 100% 60px );
+  @include size( 100% $header-height );
   background: $dark-blue;
   color: #fafafa;
-  line-height: 60px;
-  padding: 0 40px;
+  line-height: $header-height;
+  padding: 0 15px 0 40px;
   position: fixed; top: 0; left: 0;
   z-index: 99999;
   .logo {
     @include inline-block;
+    color: #fff;
     font-weight: bold;
     font-size: 32px;
+    text-decoration: none;
     text-shadow: 0 -1px 0 #000;
+  }
+  .pull-right {
+    @include inline-block;
+    float: right;
   }
   form.change-user {
     @include inline-block;
-    float: right;
     label {
       cursor: pointer;
       font-weight: bold;
@@ -83,11 +94,38 @@ body {
 
     }
   }
+  .header-divider {
+    @include inline-block;
+    @include size( 1px $header-height );
+    background: darken($dark-blue, 5%);
+    box-shadow: 1px 0 0 0 rgba(#fff, 0.04);
+    margin: 0 15px;
+    margin-top: -60px;
+    position: relative; top: 24px;
+  }
+  .header-nav {
+    @include inline-block;
+    a {
+      @include transition ( color 150ms linear );
+      @include inline-block;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      text-decoration: none;
+      text-shadow: 0 -1px 0 #000;
+      &:hover {
+        color: $green;
+      }
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
 }
 .container {
   margin: 0 auto;
-  padding-bottom: 20px;
-  position: relative; top: 80px;
+  padding: 20px 0;
+  position: relative; top: 60px;
   width: 1140px;
 }
 .statbox {
@@ -156,4 +194,21 @@ body {
 }
 .top-artists, .top-tracks, .top-albums {
   width: 760px;
+}
+
+.about-container {
+  margin: 0 auto;
+  padding: 20px;
+  position: relative; top: $header-height;
+  width: 600px;
+  a {
+    @include transition ( all 300ms linear );
+    border-bottom: 1px solid rgba($green, 0.25);
+    color: $green;
+    padding-bottom: 1px;
+    text-decoration: none;
+    &:hover {
+      border-bottom: 1px solid rgba($green, 1);
+    }
+  }
 }

@@ -19,6 +19,8 @@ app.config ($routeProvider, $locationProvider) ->
   $routeProvider.when('/', {
     templateUrl: 'public/templates/index.html'
     controller: 'MainController'
+  }).when('/about',{
+    templateUrl: 'public/templates/about.html'
   }).when('/:user', {
     templateUrl: 'public/templates/index.html'
     controller: 'MainController'

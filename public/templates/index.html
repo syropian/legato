@@ -1,10 +1,17 @@
-<div class="header" >
-  <div class="logo">Legato</div>
-  <form class="change-user" ng-submit="updateUser()">
-    <label for="txtUser">Change User</label>
-    <input type="text" ng-model="user" id="txtUser" placeholder="LastFM Username">
-    <button type="submit" ng-disabled="loading">Update</button>
-  </form>
+<div class="header">
+  <a class="logo" href="/">Legato</a>
+  <div class="pull-right">
+    <form class="change-user" ng-submit="updateUser()">
+      <label for="txtUser">Change User</label>
+      <input type="text" ng-model="user" id="txtUser" placeholder="LastFM Username">
+      <button type="submit" ng-disabled="loading">Update</button>
+    </form>
+    <div class="header-divider"></div>
+    <div class="header-nav">
+      <a href="about">About</a>
+      <a href="https://github.com/syropian/legato" target="_blank">GitHub</a>
+    </div>
+  </div>
 </div>
 <div class="container" masonry item-selector=".statbox" column-width="380" masonry-options="{ gutter: 15, isFitWidth: true }">
   <div class="masonry-brick statbox top-tracks">
