@@ -59,8 +59,4 @@ app.directive('barchart', ->
             return content
       )
       $(element).data('morris', chart)
-    
 )
-
-# app.run ($rootScope, $location) ->
-#   $rootScope.user = window.location.pathname.replace('/', '') || "rj"

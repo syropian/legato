@@ -90,15 +90,13 @@ body {
   width: 1140px;
 }
 .statbox {
-  //@include inline-block;
-  // margin-right: 20px;
   margin-bottom: 20px;
   padding: 20px;
   background: #fafafa;
   border: 1px solid #eee;
   border-radius: 6px;
-  //vertical-align: top;
   h3 {
+    @include inline-block;
     margin-top: 0;
   }
 }
