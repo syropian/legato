@@ -17,6 +17,7 @@
       <a href ng-click="getTopTracks('6month', $event)">6 Months</a>
       <a href ng-click="getTopTracks('12month', $event)">1 Year</a>
     </div>
+    <spinner color="#a7acb1" ng-show="topTracksLoading"></spinner>
     <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topTracks"></barchart>
   </div>
   <div class="masonry-brick statbox top-artists">
@@ -29,6 +30,7 @@
       <a href ng-click="getTopArtists('6month', $event)">6 Months</a>
       <a href ng-click="getTopArtists('12month', $event)">1 Year</a>
     </div>
+    <spinner color="#a7acb1" ng-show="topArtistsLoading"></spinner>
     <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topArtists"></barchart>
   </div>
   <div class="masonry-brick statbox top-albums">
@@ -41,6 +43,7 @@
       <a href ng-click="getTopAlbums('6month', $event)">6 Months</a>
       <a href ng-click="getTopAlbums('12month', $event)">1 Year</a>
     </div>
+    <spinner color="#a7acb1" ng-show="topAlbumsLoading"></spinner>
     <barchart xkey="name" ykeys="playcount" labels="Play Count" data="topAlbums"></barchart>
   </div>
   <div class="masonry-brick statbox recent-tracks">

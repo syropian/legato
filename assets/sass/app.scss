@@ -2,6 +2,7 @@
 @import 'normalize';
 $dark-blue: #2b303b;
 $green: #2dbba6;
+$light-grey: #a7acb1;
 *, *::before, *::after {
   @include box-sizing( border-box );
 }
@@ -107,17 +108,21 @@ body {
     a {
       @include transition ( color 300ms linear );
       @include inline-block;
-      color: #a7acb1;
+      color: $light-grey;
       margin-right: 10px;
       text-decoration: none;
       &:hover {
-        color: darken(#a7acb1, 12%);
+        color: darken($light-grey, 12%);
       }
       &.active {
         color: $green;
         font-weight: bold;
       }
     }
+  }
+  .loader {
+    float: right;
+    position: relative; top: 11px; right: 11px;
   }
 }
 .recent-tracks {
