@@ -8,13 +8,13 @@ angular.module('lastfmService', []).factory('Lastfm', ($http, $rootScope, LASTFM
   getRecentTracks: ->
     endpoint = @constructEndpoint("user.getrecenttracks")
     $http.get(endpoint)
-  getTopArtists: (period = "overall") ->
-    endpoint = @constructEndpoint("user.gettopartists", "#{period}")
+  getTopArtists: (filter) ->
+    endpoint = @constructEndpoint("user.gettopartists", "period=#{filter}")
     $http.get(endpoint)
-  getTopTracks: (period = "overall")   ->
-    endpoint = @constructEndpoint("user.gettoptracks", "#{period}")
+  getTopTracks: (filter) ->
+    endpoint = @constructEndpoint("user.gettoptracks", "period=#{filter}")
     $http.get(endpoint)
-  getTopAlbums: (period = "overall")   ->
-    endpoint = @constructEndpoint("user.gettopalbums", "#{period}")
+  getTopAlbums: (filter) ->
+    endpoint = @constructEndpoint("user.gettopalbums", "period=#{filter}")
     $http.get(endpoint)
 )    

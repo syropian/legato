@@ -99,6 +99,26 @@ body {
     @include inline-block;
     margin-top: 0;
   }
+  .filter-nav {
+    @include inline-block;
+    font-size: 12px;
+    margin-left: 15px;
+    position: relative; top: -3px;
+    a {
+      @include transition ( color 300ms linear );
+      @include inline-block;
+      color: #a7acb1;
+      margin-right: 10px;
+      text-decoration: none;
+      &:hover {
+        color: darken(#a7acb1, 12%);
+      }
+      &.active {
+        color: $green;
+        font-weight: bold;
+      }
+    }
+  }
 }
 .recent-tracks {
   width: 380px;

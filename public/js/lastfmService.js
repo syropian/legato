@@ -14,28 +14,19 @@
         endpoint = this.constructEndpoint("user.getrecenttracks");
         return $http.get(endpoint);
       },
-      getTopArtists: function(period) {
+      getTopArtists: function(filter) {
         var endpoint;
-        if (period == null) {
-          period = "overall";
-        }
-        endpoint = this.constructEndpoint("user.gettopartists", "" + period);
+        endpoint = this.constructEndpoint("user.gettopartists", "period=" + filter);
         return $http.get(endpoint);
       },
-      getTopTracks: function(period) {
+      getTopTracks: function(filter) {
         var endpoint;
-        if (period == null) {
-          period = "overall";
-        }
-        endpoint = this.constructEndpoint("user.gettoptracks", "" + period);
+        endpoint = this.constructEndpoint("user.gettoptracks", "period=" + filter);
         return $http.get(endpoint);
       },
-      getTopAlbums: function(period) {
+      getTopAlbums: function(filter) {
         var endpoint;
-        if (period == null) {
-          period = "overall";
-        }
-        endpoint = this.constructEndpoint("user.gettopalbums", "" + period);
+        endpoint = this.constructEndpoint("user.gettopalbums", "period=" + filter);
         return $http.get(endpoint);
       }
     };
